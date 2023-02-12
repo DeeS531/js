@@ -1,0 +1,10 @@
+<script>
+	let coins = parseFloat(prompt("Вкажіть кількість монет", "0"));
+	let curentCoins = Math.floor(coins/ 100);
+	let coinsFull = coins % 100;
+
+	document.write(`  ${Math.trunc(curentCoins)} Гривня  ${coinsFull} копійок
+
+	
+	`);
+</script>
