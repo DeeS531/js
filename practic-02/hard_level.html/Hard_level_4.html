@@ -1,0 +1,17 @@
+<script>
+	let years = parseInt(prompt("Вкажіть вік дитин до 2х років", "0"));
+	
+	let sadikStart = 3-years;
+	
+	let schoolStart = 6-years;
+	let schoolEnd = schoolStart+11;
+	let universityStart=schoolEnd+1
+	let universityEnd = universityStart+4
+
+	document.write(`Піде в садочок: Через  ${sadikStart} <br>
+	Піде в школу: Через ${schoolStart}<br>
+	закінчить школу: Через   ${schoolEnd}<br>
+	Вступить: Через  ${universityStart}<br>
+	Закінчить: Через  ${universityEnd}<br>
+	`);
+</script>

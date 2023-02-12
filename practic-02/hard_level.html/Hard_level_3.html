@@ -1,0 +1,14 @@
+<script>
+	let salary = parseFloat(prompt("Вкажіть ціну товара №1", "0"));
+	let quantityGoods = parseInt(prompt("Вкажіть кількість товарів №1", "0"));
+	let salary_2 = parseFloat(prompt("Вкажіть ціну товара №2", "0"));
+	let quantityGoods_2 = parseInt(prompt("Вкажіть кількість товарів №2", "0"));
+	let sumSalary = salary * quantityGoods;
+	let sumSalary_2 = salary_2 * quantityGoods_2;
+	let fullSalary = sumSalary + sumSalary_2;
+
+	document.write(`Вартість товару №1 = ${sumSalary} <br>
+	Вартість товару №2 = ${sumSalary}<br>
+	Загальна вартість =  ${fullSalary}
+	`);
+</script>
