@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="./js/script.js"></script>
+		<title>Document</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div class="page">
+			<p>
+				З клавіатури вводиться номер дня тижня. Вивести на екран назву дня.
+			</p>
+			<script>
+				const weekDayNum = parseInt( prompt("Введіть номер дня тижня", ""));
+				
+				//спробував switch і не зміг відмовитись )
+				switch (weekDayNum) {
+					case 1: result=document.write(`Monday `)
+						break;
+						case 2: result=document.write(`Tuesday `)
+						break;
+						case 3: result=document.write(`Wednesday `)
+						break;
+						case 4: result=document.write(`Thursday `)
+						break;
+						case 5: result=document.write(`Friday `)
+						break;
+						case 6: result=document.write(`Saturday `)
+						break;
+						case 7: result=document.write(`Sunday `)
+						break;
+				
+					default:result=document.write(`Некорректне значення`)
+						break;
+				}
+
+				
+			</script>
+		</div>
+	</body>
+</html>

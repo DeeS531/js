@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="./js/script.js"></script>
+		<title>Document</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div class="page">
+			<p>
+				З клавіатури вводиться назва категорії водія (А-мотоцикл, В-легковий автомобіль, С-вантажний автомобіль). Вивести на екран назву транспортного засобу, яким він може керувати.
+			</p>
+			<script>
+				const categoryDriver = prompt("Введіть вашу категорію водія ( А, Б або С)", "").toUpperCase();
+				
+				 const passengerCar = 'A'
+				 const motorbike = 'B'
+				 const truck = 'C'
+
+			
+				if (categoryDriver === passengerCar )
+					document.write(`А-мотоцикл` );
+				else if (categoryDriver === motorbike )
+				 document.write(`В-легковий автомобіль`);
+				 else if (categoryDriver === truck )
+				 document.write(`С-вантажний автомобіль`);
+				else document.write(`Введено некорректне значення`);
+
+				
+			</script>
+		</div>
+	</body>
+</html>
