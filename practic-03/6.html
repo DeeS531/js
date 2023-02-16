@@ -14,28 +14,30 @@
 				З клавіатури вводиться номер дня тижня. Вивести на екран назву дня.
 			</p>
 			<script>
-				const weekDayNum = parseInt( prompt("Введіть номер дня тижня", ""));
-				
+				const weekDayNum = parseInt( prompt("Введіть номер дня тижня 1-7", ""));
+				let res;
 				//спробував switch і не зміг відмовитись )
 				switch (weekDayNum) {
-					case 1: result=document.write(`Monday `)
+					case 1: res=`Monday `
 						break;
-						case 2: result=document.write(`Tuesday `)
+						case 2: res=`Tuesday `
 						break;
-						case 3: result=document.write(`Wednesday `)
+						case 3: res=`Wednesday `
 						break;
-						case 4: result=document.write(`Thursday `)
+						case 4: res=`Thursday `
 						break;
-						case 5: result=document.write(`Friday `)
+						case 5: res=`Friday `
 						break;
-						case 6: result=document.write(`Saturday `)
+						case 6: res=`Saturday `
 						break;
-						case 7: result=document.write(`Sunday `)
+						case 7: res=`Sunday `
 						break;
 				
-					default:result=document.write(`Некорректне значення`)
+					default:res=`Некорректне значення`
 						break;
 				}
+
+				document.write(res)
 
 				
 			</script>
