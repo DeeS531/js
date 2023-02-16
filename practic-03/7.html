@@ -14,25 +14,32 @@
 				З клавіатури вводиться номер місяця. Вивести до якої пори він відноситься
 			</p>
 			<script>
-				const numMonth = parseInt( prompt("Введіть номер місяця", ""));
-				const winterMonth=12
-				const springMonth=3
-				const summerMonth=6
-				const autumnMonth=9
-				const startMonth=1
-				
-				if (numMonth >startMonth && numMonth<springMonth || numMonth=== winterMonth)
-					document.write(`Зима` );
-				else if (numMonth >= springMonth && numMonth<summerMonth)
-					document.write(`весна` );
-					else if (numMonth >= summerMonth && numMonth<autumnMonth)
-					document.write(`літо` );
-					else if (numMonth >= autumnMonth && numMonth<winterMonth)
-					document.write(`осінь` );
+				const numMonth = parseInt(prompt("Введіть номер місяця", ""));
+				let res;
+				//спробував switch і не зміг відмовитись )
+				switch (numMonth) {
+					case 12:
+					case 1:
+					case 2:res = `Зима `;
+						break;
+					case 3:
+					case 4:
+					case 5:res = `весна `;
+						break;
+					case 6:
+					case 7:
+					case 8:	res = `літо`;
+						break;
+					case 9:
+					case 10:
+					case 11:res = `осінь`;
+						break;
+					default:
+						res = `Некорректне значення`;
+						break;
+				}
 
-					else  
-					document.write(`НЕкоректне значення` );
-
+				document.write(res);
 				
 			</script>
 		</div>
