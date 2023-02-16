@@ -14,22 +14,18 @@
 				З клавіатури вводиться вік людини. Вивести на екран ким він є (дитиною у садочку, школярем, студентом, працівником, пенсіонером).
 			</p>
 			<script>
-				const yearsPerson = parseInt (prompt("Введіть вік", ""));
-				
-				schoolboyYears= 6
-				studentYears= 17
-				adultYears=21
-
-				
-				if (yearsPerson < schoolboyYears)
-					document.write(` дитина у садочку` );
-				else if (yearsPerson>=schoolboyYears && yearsPerson<studentYears)
-				 document.write(`школяр  `);
-				 else if (yearsPerson>=studentYears && yearsPerson<adultYears)
-				 document.write(`студент `);
-
-				else
-				document.write(`працівник`);
+					const yearsPerson = parseInt(prompt("Введіть вік", ""));
+				const schoolboyYears = 6,
+					studentYears = 17,
+					adultYears = 21,
+					oldSchool = 65;
+				let res;
+				if (yearsPerson < schoolboyYears) document.write(` дитина у садочку`);
+				else if (yearsPerson < studentYears) res = `школяр  `;
+				else if (yearsPerson < adultYears) res = `студент `;
+				else if (yearsPerson < oldSchool) res = `працівник `;
+				else res = `пенсіонер`;
+				document.write(res);
 
 				
 			</script>
