@@ -14,20 +14,21 @@
 				З клавіатури вводиться назва категорії водія (А-мотоцикл, В-легковий автомобіль, С-вантажний автомобіль). Вивести на екран назву транспортного засобу, яким він може керувати.
 			</p>
 			<script>
-				const categoryDriver = prompt("Введіть вашу категорію водія ( А, Б або С)", "").toUpperCase();
-				
-				 const passengerCar = 'A'
-				 const motorbike = 'B'
-				 const truck = 'C'
+					const categoryDriver = prompt(
+					"Введіть вашу категорію водія ( А, Б або С)",
+					""
+				).toUpperCase();
 
-			
-				if (categoryDriver === passengerCar )
-					document.write(`А-мотоцикл` );
-				else if (categoryDriver === motorbike )
-				 document.write(`В-легковий автомобіль`);
-				 else if (categoryDriver === truck )
-				 document.write(`С-вантажний автомобіль`);
-				else document.write(`Введено некорректне значення`);
+				const passengerCar = "A";
+				const motorbike = "B";
+				const truck = "C";
+				let res;
+
+				if (categoryDriver === passengerCar) res = `А-мотоцикл`;
+				else if (categoryDriver === motorbike) res = `В-легковий автомобіль`;
+				else if (categoryDriver === truck) res=`С-вантажний автомобіль`;
+				else res=`Введено некорректне значення`;
+				document.write(res);
 
 				
 			</script>
