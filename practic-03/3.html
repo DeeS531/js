@@ -18,10 +18,15 @@
 				const prevNum = parseInt(prompt("Введіть число", ""));
 				const minValue = 1;
 				const maxValue = 5;
+				let status
 				const newNum = Math.floor(Math.random() * (maxValue - minValue)) + minValue;
 				console.log(newNum)
-				if (prevNum === newNum) document.write(`вітаємо ви вгадали`);
-				else document.write(`спробуййте ще разок`);
+				if (prevNum === newNum) status=`вітаємо ви вгадали`;
+				const prevNumTwo = parseInt(prompt("спробуййте ще разок", ""))
+				if (prevNumTwo === newNum) status=`вітаємо ви вгадали`;
+				else status=`не твій день` 
+				
+				document.write(status)
 			</script>
 		</div>
 	</body>
