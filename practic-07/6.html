@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="./js/script.js"></script>
+		<title>Document</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div class="page">
+			<p>
+				Створити функцію, яка для 3 заданих чисел знаходить одночасно декілька
+				результатів: кількість парних, кількість додатних, кількість більших за
+				100.
+			</p>
+
+			<script>
+				function getNumbers(num1, num2, num3) {
+					let evenCount = 0;
+					let positiveCount = 0;
+					let over100Count = 0;
+
+					if (num1 %2 === 0) {
+						evenCount++
+					}
+					if (num2 %2 === 0) {
+						evenCount++
+					}
+					if (num3 %2 === 0) {
+						evenCount++
+					}
+
+
+					if (num1 > 0) {
+						positiveCount++
+					}
+					if (num2 > 0) {
+						positiveCount++
+					}
+					if (num3 > 0) {
+						positiveCount++
+					}
+
+					if (num1 > 100) {
+						over100Count++
+					}
+					if (num2 > 100) {
+						over100Count++
+					}
+					if (num3 > 100) {
+						over100Count++
+					}
+					return	document.write(`кількість парних =${evenCount} <br> кількість додатних =${positiveCount} <br> кількість більших за 100 =${over100Count}
+				`)
+					
+				}
+				let numOne = parseFloat(prompt("Num 1 ="));
+				let numTwo = parseFloat(prompt("Num 2 ="));
+				let numThree = parseFloat(prompt("Num 3 ="));
+				const numbers = getNumbers(numOne, numTwo, numThree);
+			</script>
+		</div>
+	</body>
+</html>

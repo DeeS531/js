@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+		<title>Document</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div class="page">
+			<p>
+				Створити функцію, яка за номером місяця повертає пору року, до якої
+				відноситься цей місяць.
+			</p>
+			<script>
+				function getSeason(month) {
+					if (month >= 3 && month <= 5) {
+						return "весна";
+					} else if (month >= 6 && month <= 8) {
+						return "літо";
+					} else if (month >= 9 && month <= 11) {
+						return "осінь";
+					} else {
+						return "зима";
+					}
+				}
+				const monthSeason= getSeason(parseInt(prompt('вкажіть номер місяця')))
+				document.write(monthSeason)
+			</script>
+		</div>
+	</body>
+</html>

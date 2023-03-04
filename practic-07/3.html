@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="./js/script.js"></script>
+		<title>Document</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div class="page">
+			<p>. Створити функцію, яка за номером дня дозволяє з’ясувати чи є цей день робочим.
+			</p>
+			<script>
+			function getWorking(day) {
+				if (day>0 && day<6) {
+					return `Робочий день`
+				}
+				else return `вихідний`
+			}
+			const dayWorking= getWorking(parseInt(prompt('вкажіть номер дня')))
+				document.write(dayWorking)
+			</script>
+		</div>
+	</body>
+</html>

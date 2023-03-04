@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Document</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div class="page">
+			<p>
+				творити функцію, яка виводить банер (у функцію передаються: зображення,
+				заголовок та посилання, куди переходимо при кліку на зображення (тег img
+				повине знаходитись у середині тега a: <a> <img src="”шлях”" /> </a>
+			</p>
+
+			<script>
+				function createBanner(imageSrc, title, link) {
+				return	document.write(`<a href= ${link} ><img src= ${imageSrc} <h2> ${title}  </h2></a>`);
+				}
+				const banner=createBanner('image.jpg', 'My Banner', 'http://example.com');
+				
+
+			</script>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="./js/script.js"></script>
+		<title>Document</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div class="page">
+			<p>
+				Створити функцію, яка за номером місяця повертає його назву.
+
+			</p>
+			<script>
+				function getMonth(month) {
+  switch (month) {
+    case 1:
+      return "січень";
+    case 2:
+      return "лютий";
+    case 3:
+      return "березень";
+    case 4:
+      return "квітень";
+    case 5:
+      return "травень";
+    case 6:
+      return "червень";
+    case 7:
+      return "липень";
+    case 8:
+      return "серпень";
+    case 9:
+      return "вересень";
+    case 10:
+      return "жовтень";
+    case 11:
+      return "листопад";
+    case 12:
+      return "грудень";
+   
+  }
+}
+const monthSeason= getMonth(parseInt(prompt('вкажіть номер місяця')))
+				document.write(monthSeason)
+			</script>
+		</div>
+	</body>
+</html>
