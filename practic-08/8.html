@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Document</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div class="page">
+			<p>
+				Дано одновимірний масив, у якому зберігається певна виграшна сума
+				(елементи заповнюються випадковим чином значеннями від -500 до 500).
+				Надаючи користувачу можливість вибирати номери елементів (поки він не
+				відмовиться). Знаходити сумарний виграш.
+			</p>
+
+			<script>
+				let winnings = [];
+				for (let i = 0; i < 10; i++) {
+					winnings.push(1 + Math.floor(Math.random() * 1000) - 500);
+				}
+
+				let selectedNumbers = [];
+				let input;
+
+				while (true) {
+					input = parseInt(
+						prompt(
+							`Виберіть номер елементу від (1-${winnings.length}). Якщо більше не бажаєте вибирати, натисніть "Відміна`
+						)
+					);
+					if (isNaN(input)) {
+						break;
+					}
+					if (!isNaN(input) && input >= 1 && input <= winnings.length) {
+						selectedNumbers.push(input - 1);
+					}
+				}
+
+				let totalSumWins = 0;
+				for (let i = 0; i < selectedNumbers.length; i++) {
+					totalSumWins += winnings[selectedNumbers[i]];
+				}
+				document.write(`Загальний виграш = ${totalSumWins}`);
+			</script>
+		</div>
+	</body>
+</html>

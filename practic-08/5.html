@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Document</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div class="page">
+			<p>Дано послідовність оцінок учня. Підрахувати кількість</p>
+
+			<ol>
+				<li> двійок</li>
+				<li> кількість хороших оцінок (добре, відмінно);</li>
+				<li> кількість оцінок, які нижче середнього.</li>
+			</ol>
+
+			<script>
+				let rating = [3, 4, 2, 5, 1, 4, 3, 2, 4, 1, 5, 2, 3, 4, 5]
+				let twin = 0
+				let goodMarks = 0
+				let belowAverage = 0
+				for (let i = 0; i < rating.length; i++) {
+						if (rating[i]===2) {
+							twin++
+					}
+					if (rating[i]>3) {
+						goodMarks++
+					}
+					if (rating[i]<4) {
+						belowAverage++
+					}
+				}
+				document.write(`двійок = ${twin}<br> 
+				кількість хороших оцінок (добре, відмінно) = ${goodMarks}<br>
+				кількість оцінок, які нижче середнього. = ${belowAverage}<br>
+				`)
+			</script>
+		</div>
+	</body>
+</html>

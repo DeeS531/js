@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Document</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div class="page">
+			<p>
+				Дано послідовність платіжок протягом року. Знайти сумарну кількість
+				грошей за:
+			</p>
+			<ol>
+				<li>за весь рік;</li>
+				<li>у першій половині року;</li>
+				<li>у другій половині року;</li>
+				<li>за літо;</li>
+				<li>за ІІ квартал;</li>
+				<li>за парні місяці (з парними номерами);</li>
+				<li>
+					за місяці, які є початковими у сезоні (весна, літо, осінь, зима).
+				</li>
+			</ol>
+
+			<script>
+				let randomSumMouth = [];
+				for (let i = 0; i < 12; i++) {
+					let num = 1 + Math.floor(Math.random() * 2500);
+					randomSumMouth.push(num);
+				}
+
+				let allMouthSum = 0;
+				let firstHalfYear = 0;
+				let secondHalfYear = 0;
+				let sumerMouth = 0
+				let secondQuarterSum = 0;
+				let oneMouthSum = 0;
+				for (let i = 0; i < randomSumMouth.length; i++) {
+					allMouthSum += randomSumMouth[i];
+				}
+
+				for (let i = 0; i < randomSumMouth.length; i++) {
+					if (i < 6) {
+						firstHalfYear += randomSumMouth[i];
+					}
+					if (i > 5) {
+						secondHalfYear += randomSumMouth[i];
+					}
+					if (i>5 && i < 9) {
+						sumerMouth+= randomSumMouth[i]
+					}
+					if (i>1 && i < 5) {
+						secondQuarterSum+= randomSumMouth[i]
+					}
+
+				}
+				
+				for (let i = 0; i < randomSumMouth.length; i++) {
+					if (i > 0 && i <2) {
+						oneMouthSum += randomSumMouth[i];
+					}
+					if ( i === 11) {
+						oneMouthSum += randomSumMouth[i];
+					}
+					if ( i === 8) {
+						oneMouthSum += randomSumMouth[i];
+					}
+					if ( i === 5) {
+						oneMouthSum += randomSumMouth[i];
+					}
+					if ( i === 2) {
+						oneMouthSum += randomSumMouth[i];
+					}
+				}
+				console.log(oneMouthSum);
+				console.log(secondQuarterSum);
+				console.log(sumerMouth);
+				console.log(allMouthSum);
+				console.log(secondHalfYear);
+				console.log(firstHalfYear);
+				//console.log(randomSumMouth);
+			</script>
+		</div>
+	</body>
+</html>

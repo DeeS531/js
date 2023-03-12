@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="./js/script.js"></script>
+		<title>Document</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div class="page">
+			<p>
+				Дано масив імен учнів. З’ясувати скільки разів зустрічається ім’я
+				«Іван».
+			</p>
+			<script>
+				let namePersons = ["Іван", "Захар", "Анастасія", "Іван"];
+				function studentName(name) {
+					let sum = 0;
+					for (let i= 0; i < name.length; i++) {
+						if ((name[i] === "Іван")) {
+							sum++;
+						}
+					}
+					return sum;
+				}
+				sumPersonName = studentName(namePersons);
+				document.write(sumPersonName);
+			</script>
+		</div>
+	</body>
+</html>

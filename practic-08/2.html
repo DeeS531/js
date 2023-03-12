@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="./js/script.js"></script>
+		<title>Document</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div class="page">
+			<p>
+				Дано масив, який зберігає кількість відвідувачів магазину протягом
+				тижня. Вивести на екран:
+			</p>
+			<ol>
+				<li>
+					номери днів, протягом яких кількість відвідувачів була меншою за 20;
+				</li>
+				<li>
+					номери днів, коли кількість відвідувачів була мінімальною(меншою за
+					10);
+				</li>
+				<li>
+					загальну кількість клієнтів у робочі дні та окремо загальну кількість
+					днів на вихідних.
+				</li>
+			</ol>
+			<script>
+			
+				let personStore = getPersonStore(7);
+				let personDaysMax_20 = isPersonDaysMax_20(personStore);
+				let personDaysMin_10 = isPersonDaysMin_10(personStore);
+				let personDaysSum = isPersonDaysSum(personStore);
+				function getPersonStore(array) {
+					let random = [];
+					for (let i = 0; i < array; i++) {
+						random[i] = 1 + Math.floor(Math.random() * 100);
+					}
+					return random;
+				}
+
+				function isPersonDaysMax_20(array) {
+					let resultI = [];
+					for (let i = 0; i <= array.length; i++) {
+						if (array[i] < 20) {
+							resultI.push(i);
+						}
+					}
+					document.write(`кількість відвідувачів була меншою за 20 <br>`)
+					for (let i = 0; i < resultI.length; i++) {
+						document.write(`${resultI[i]+ 1}  ;`)
+					}
+				}
+				 
+			
+				function isPersonDaysMin_10(array) {
+					let resultI = [];
+					for (let i = 0; i <= array.length; i++) {
+						if (array[i] < 10) {
+							resultI.push(i);
+						}
+					}
+					document.write(`<br>кількість відвідувачів була меншою за 10 <br>`)
+					for (let i = 0; i < resultI.length; i++) {
+						document.write(` ${resultI[i] + 1}     ;`);
+					}
+				}
+				function isPersonDaysSum(array) {
+					let personSumOpen = 0;
+					let personSumClose = 0;
+					for (let i = 0; i < 5; i++) {
+						personSumOpen += array[i];
+					}
+					for (let i = 5; i < 7; i++) {
+						personSumClose += array[i];
+					}
+					 document.write(`<br> Клієнтів в робочі дні = ${personSumOpen}
+					<br> На вихідних = ${personSumClose}
+				`);
+				}
+			</script>
+		</div>
+	</body>
+</html>

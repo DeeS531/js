@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Document</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div class="page">
+			<p>
+				Дано масив, який містить оцінки з К предметів. Знайти середній бал і
+				з’ясувати до якої категорії він відноситься (відмінник (10-12),
+				двійочник (має хоча би одну двійку), хорошист (4-9), трійочник(є хоча би
+				одна трійка)).
+			</p>
+			<script>
+				let quantityItems = getQuantity(
+					parseInt(prompt("Яка кількість предметів ?"))
+				);
+				function getQuantity(items) {
+					let evaluation = [];
+					for (let i = 0; i < items; i++) {
+						let k = parseInt(prompt(`Оцінка предмету № ${i + 1} ?`));
+						evaluation[i] = k;
+					}
+					return evaluation;
+				}
+
+				function getAverage(array) {
+					let sum = 0;
+					for (let i = 0; i < array.length; i++) {
+						sum += array[i];
+						return sum;
+					}
+				}
+
+				function getCategory(array) {
+					let hasTwo = false;
+					let hasThree = false;
+					let hasGoodGrade = false;
+					let hasExcellentGrade = false;
+					let result;
+					for (let i = 0; i < array.length; i++) {
+						if (array[i] === 2) {
+							hasTwo = true;
+						}
+						if (array[i] === 3) {
+							hasThree = true;
+						}
+						if (array[i] > 3 && array[i] < 10) {
+							hasGoodGrade = true;
+						}
+						if (array[i] > 9) {
+							hasExcellentGrade = true;
+						}
+					}
+					if (hasTwo) {
+						result = "Двійочник";
+					} else if (hasThree) {
+						result = "Трійочник";
+					} else if (hasGoodGrade) {
+						result = "Хорошист";
+					} else if (hasExcellentGrade) {
+						result = "Відмінник";
+					}
+					return result;
+				}
+
+				let average = getAverage(quantityItems);
+				let category = getCategory(quantityItems);
+				document.write(`Середній бал: ${average}<br>`,`Категорія: ${category}`);
+			</script>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="./js/script.js"></script>
+		<title>Document</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div class="page">
+			<p>
+				Дано послідовність номерів автомобілів. Підрахувати кількість номерів,
+				які :
+			</p>
+			<ol>
+				<li>починаються на букву «А»;</li>
+				<li>перша і остання літери співпадають;</li>
+				<li>складаються з більше ніш 5 символів;</li>
+			</ol>
+			<script>
+				let numAuto = [
+					"AA1212CV",
+					"CA1124AC",
+					"AQ12",
+					"CA1124",
+					"A1124",
+					"AQ12A",
+				];
+				let letter_A = 0;
+				let lastLetters = 0;
+				let LettersMore_5 = 0;
+				for (let i = 0; i < numAuto.length; i++) {
+					if (numAuto[i][0] === "A") {
+						letter_A++;
+					}
+
+					if (numAuto[i][0] === numAuto[i][numAuto[i].length-1]) {
+						lastLetters++;
+					}
+					if (numAuto[i].length > 5) {
+						LettersMore_5++;
+					}
+				}
+				document.write(`починаються на букву «А» =${letter_A}<br>
+				перша і остання літери співпадають = ${lastLetters}<br>
+				складаються з більше ніш 5 символів = ${LettersMore_5}<br>
+				`);
+			</script>
+		</div>
+	</body>
+</html>

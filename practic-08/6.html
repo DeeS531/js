@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<script src="./js/script.js"></script>
+		<title>Document</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div class="page">
+			<p>
+				Дано послідовність цін товарів та назв (у окремих масивах). Вивести на
+				екран ті, які може собі дозволити користувач (кількість грошей
+				задається).
+			</p>
+			<!-- <p>Приклад збереження даних</p>
+			<p>let productsPrices = [1000, 20, 31]</p>
+			<p>let productsTitles = [‘cheese’, ‘juice’, ‘bread’]</p> -->
+
+			<script>
+				let moneyPerson = parseFloat(prompt("Вкажать суму коштів"));
+				let productsPrices = [1000, 20, 31];
+				let productsTitles = ["cheese", "juice", "bread"];
+
+				let buyProducts = getAffordableProducts(
+					productsPrices,
+					productsTitles,
+					moneyPerson
+				);
+				function getAffordableProducts(price, product, money) {
+					let result = [`Согодні ти можеш купити :<br>`];
+					for (let i = 0; i < price.length; i++) {
+						if (money > price[i]) {
+							result.push(`${product[i]} за ${price[i]} `);
+						}
+					}
+					return result;
+				}
+				document.write(buyProducts);
+			</script>
+		</div>
+	</body>
+</html>
