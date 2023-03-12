@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Document</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div class="page">
+			<p>
+				Дано масив номерів авто. Сформувати новий масив тих, які починаються на
+				«А»
+			</p>
+
+			<script>
+				let numAuto = ['A124F','CAS32','A4221AA','FA231','KKASF1']
+				let autoNum_a= numAuto.map((element,index) => {
+					if (element[0]=== 'A') {
+						return element
+					}
+				})
+				document.write(autoNum_a);
+			</script>
+		</div>
+	</body>
+</html>

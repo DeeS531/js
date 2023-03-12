@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Document</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div class="page">
+			<p>
+				Дано масив елементів. Усі елементи, які більші за перший елемент
+				помножити на 2
+			</p>
+
+			<script>
+				let userNumElements = [12, -451, 22, 187, -445, 781, -120, 1, 5, 48];
+				let firstElement = userNumElements[0];
+				let resultElements = userNumElements.map((element) => {
+					if (element > firstElement) {
+						return element * 2;
+					}
+					return element;
+				});
+
+				document.write(resultElements);
+			</script>
+		</div>
+	</body>
+</html>
