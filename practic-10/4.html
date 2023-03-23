@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		
+		<title>Document</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div class="page">
+			<p>
+				Сформувати новий масив, що міститиме значення цін у відсотках стосовно
+				максимального
+			</p>
+			<script>
+				function getRandomNum() {
+						return 1 + Math.floor(Math.random() * 2000);
+					}
+					function quantityRandom(params) {
+						let randomNum = [];
+						for (let i = 0; i < params; i++) {
+							randomNum.push(getRandomNum());
+						}
+						return randomNum;
+					}
+					let numElements = quantityRandom(10)
+					let maxNumElement=numElements.reduce((previousValue, el) => previousValue<el?previousValue=el:previousValue, )
+					let resultPresent = numElements.map(element => element/maxNumElement*100)
+
+					for (const element of resultPresent) {
+						document.write(`${element.toFixed(2)} %<br>`)
+					}
+					
+			</script>
+		</div>
+	</body>
+</html>
