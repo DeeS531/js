@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Document</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div class="page">
+			<p>Знайти індекс останньої ціни, що більше за 1000</p>
+			<script>
+				function getRandomNum() {
+					return 1 + Math.floor(Math.random() * 1800);
+				}
+				function quantityRandom(params) {
+					let randomNum = [];
+					for (let i = 0; i < params; i++) {
+						randomNum.push(getRandomNum());
+					}
+					return randomNum;
+				}
+
+				let numbersIndex = quantityRandom(10).findLastIndex((el) => el > 1000);
+				if (numbersIndex !== -1) {
+					document.write(numbersIndex);
+				} else {
+					document.write(`Таких цін не має`);
+				}
+	</script>
+		</div>
+	</body>
+</html>
