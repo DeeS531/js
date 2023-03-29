@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Document</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div class="page">
+			<p>Дано інформацію про прибуток К магазинів протягом тижня. Знайти :</p>
+			<p>Задача 1. загальний прибуток кожного масиву за тиждень;</p>
+			<p>
+				Задача 2. загальний прибуток усіх магазинів по дням (загальний прибуток
+				усіх магазинів за понеділок, за вівторок, і т.д.);
+			</p>
+			<p>Задача 3. загальний прибуток за робочі дні</p>
+			<p>Задача 4. загальний прибуток за вихідні дні</p>
+			<p>Задача 5. максимальний прибуток за середу</p>
+			<p>
+				Задача 6. сформувати загальний список (одновимірний масив) зі значенням,
+				які що більші за 200
+			</p>
+			<p>Задача 7. відсортувати кожен тиждень за зростанням</p>
+			<p>
+				Задача 8. відсортувати тижні (рядки) за спаданням максимального елементи
+				у цьому тижні (рядку), тобто при порівнянні рядків потрібно порівнювати
+				максимальні елементи у кожному з цих рядків
+			</p>
+			<p>
+				Задача 9. упорядкувати тижні (рядки) за спаданням суми елементів у рядку
+				(тобто при порівнянні двох рядків треба знайти суму кожного з рядків і
+				порівнювати ці суми, на основі цих сум буде зрозуміло, який з елементів
+				повинен іти раніше).
+			</p>
+
+			<script>
+				// рандомні числа
+				function getRandomNum(min, max) {
+					return min + Math.floor(Math.random() * (max - min + 1));
+				}
+				// створення одновимірного масиву
+				function getRandomArray(arrLength, min, max) {
+					let arr = [];
+					for (let i = 0; i < arrLength; i++) {
+						const randomNum = getRandomNum(min, max);
+						arr.push(randomNum);
+					}
+					return arr;
+				}
+				// створення двовимірного масиву
+
+				function getRandomTable(row, column, min, max) {
+					let table = [];
+					for (let rowsNum = 0; rowsNum < row; rowsNum++) {
+						const random = getRandomArray(column, min, max);
+						table.push(random);
+					}
+					return table;
+				}
+
+				const shop = 7;
+				const week = 7;
+				const minValue = 1;
+				const maxValue = 500;
+				const weekdays = week - 2;
+
+				const arrShop = getRandomTable(shop, week, minValue, maxValue);
+				//========================================================================================================================================
+				sum1 = [];
+				for (let row = 0; row < arrShop.length; row++) {
+					let sum = 0;
+					for (let column = 0; column < arrShop[row].length; column++) {
+						sum += arrShop[row][column];
+					}
+					sum1.push(sum);
+				}
+				document.write(`Задача 1 =  ${sum1}<br>`);
+
+				//========================================================================================================================================				//================================================================================
+				sum2 = [];
+				for (let row = 0; row < arrShop.length; row++) {
+					let sum = 0;
+					for (let column = 0; column < arrShop[row].length; column++) {
+						sum += arrShop[column][row];
+					}
+					sum2.push(sum);
+				}
+				document.write(`Задача 2 =  ${sum2}<br>`);
+
+				//========================================================================================================================================
+				sum3 = [];
+				for (let row = 0; row < arrShop.length; row++) {
+					let sum = 0;
+
+					for (let column = 0; column < 5; column++) {
+						
+							sum += arrShop[row][column];
+						
+					}
+					sum3.push(sum);
+				}
+				document.write(`Задача 3 =  ${sum3}<br>`);
+
+				//========================================================================================================================================
+				sum4 = [];
+				for (let row = 0; row < arrShop.length; row++) {
+					let sum = 0;
+
+					for (let column = 5; column < arrShop[row].length; column++) {
+						
+							sum += arrShop[row][column];
+						
+					}
+					sum4.push(sum);
+				}
+				document.write(`Задача 4 =  ${sum4}<br>`);
+
+				//========================================================================================================================================
+				sum5 = arrShop[0][2];
+				for (let i = 0; i < arrShop.length; i++) {
+					if (arrShop[i][2] > sum5) {
+						sum5 = arrShop[i][2];
+					}
+				}
+				document.write(`Задача 5 =  ${sum5}<br>`);
+				//========================================================================================================================================
+				sum6ArrShop = arrShop.flat(Infinity);
+				sum6 = sum6ArrShop.filter((element) => element > 200);
+
+				document.write(`Задача 6 =  ${sum6}<br>`);
+				//========================================================================================================================================
+				sum7 = sum2.sort((a, b) => a - b);
+				document.write(`Задача 7 =  ${sum7}<br>`);
+				//========================================================================================================================================
+				let sum8 = JSON.parse(JSON.stringify(arrShop));
+				sum8.sort((a, b) => {
+					const maxA = Math.max(...a);
+					const maxB = Math.max(...b);
+					return maxB - maxA;
+				});
+
+				document.write(`Задача 8 =  <br>${sum8[0]}<br>`);
+				document.write(` ${sum8[1]}<br>`);
+				document.write(` ${sum8[2]}<br>`);
+				document.write(` ${sum8[3]}<br>`);
+				document.write(` ${sum8[4]}<br>`);
+				document.write(` ${sum8[5]}<br>`);
+				//========================================================================================================================================
+				sum9 = [];
+				for (let row = 0; row < arrShop[0].length; row++) {
+					let sum = 0;
+					for (let column = 0; column < arrShop.length; column++) {
+						sum += arrShop[column][row];
+					}
+					sum9.push(sum);
+				}
+
+				document.write(`Задача 9 = ${sum9}<br>`);
+			</script>
+		</div>
+	</body>
+</html>
