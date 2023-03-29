@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Document</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div class="page">
+			<p> Морський бій. Випадковим чином на двовимірному полі розміром 6*6 розташовується 5 кораблів. Користувач стріляє вказуючи координати. Гра продовжується поки не потоплено усі кораблі або у користувача не закінчаться снаряди.
+			</p>
+			<script>
+				const arrSea = [[0,0,0,0,0,0],[1,0,0,0,0,0],[0,0,0,1,0,0],[0,1,0,0,0,0],[0,0,0,0,1,0],[0,0,0,0,1,0],[1,0,0,0,0,0]]
+				const userClick=[]
+				for (let i = 0; i < 6; i++) {
+					let userRow = parseInt(prompt(`Вкажіть клітинку рядка від 1 до 6`))
+					let userColumn = parseInt(prompt(`Вкажіть клітинку рядка від 1 до 6`))
+					let result =[]
+					result.push(userRow,userRow)
+					
+					userClick.push(result)
+				}
+				
+				
+				
+			</script>
+		</div>
+	</body>
+</html>
