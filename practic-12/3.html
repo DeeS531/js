@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Document</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div class="page">
+			<p>
+				Дано масив 30 випадкових цілих чисел. Підрахувати скільки було обмінів
+				під час сортування включеннями.
+			</p>
+			<script>
+				function getRandomNum(min, max) {
+					return min + Math.floor(Math.random() * (max - min + 1));
+				}
+				function getRandomArr(valuesNumber, min, max) {
+					let arr = [];
+					for (let i = 0; i < valuesNumber; i++) {
+						const randNum = getRandomNum(min, max);
+						arr.push(randNum);
+					}
+					return arr;
+				}
+
+				const array = getRandomArr(30, 1, 100);
+				let leftIdx = 0;
+				let rightIdx = array.length - 1;
+				let result = 0;
+				
+				result = 0;
+				
+					for (let k = 1; k < array.length; k++) {
+						const el = array[k];
+						let i = k - 1;
+						while (i >= 0 && array[i] > el) {
+							array[i + 1] = array[i];
+							i = i - 1;
+							result++
+						}
+						array[i + 1] = el;
+						result++
+					}
+				
+				document.write(result)
+			</script>
+		</div>
+	</body>
+</html>
