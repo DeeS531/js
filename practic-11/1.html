@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Document</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div class="page">
+			<p>Знайти суми елементів у вказаній області</p>
+			<p>Задача 1. <img src="./img/Screenshot_4.png" alt="" /></p>
+			<p>Задача 2. <img src="./img/Screenshot_1.png" alt="" /></p>
+
+			<p>Задача 3 <img src="./img/Screenshot_2.png" alt="" /></p>
+
+			<p>Задача 4 <img src="./img/Screenshot_3.png" alt="" /></p>
+			<p>Задача 5. Суму парних рядків</p>
+			<p>Задача 6. Суму непарних стовпців</p>
+			<p>Задача 7. У парних рядках – непарні стовпці, у непарних – парні.</p>
+
+			<script>
+				let arr = [
+					[2, 4, 3, 6],
+					[3, 5, 6, 2],
+					[2, 4, 4, 3],
+					[3, 5, 5, 6],
+				];
+				let middleRow = Math.floor(arr.length / 2);
+				let middleColumn = Math.floor(arr[0].length / 2);
+				sum1 = 0;
+				sum2 = 0;
+				sum3 = 0;
+				sum4 = 0;
+				sum5 = 0;
+				sum6 = 0;
+				sum7 = 0;
+				//======================= 1 ===============================================
+
+				for (let row = 0; row < middleRow; row++) {
+					for (let colum = 0; colum < middleColumn; colum++) {
+						sum1 += arr[row][colum];
+					}
+				}
+				//======================= 2 ===============================================
+				for (let row = 0; row < middleRow; row++) {
+					for (let colum = middleColumn; colum < arr[0].length; colum++) {
+						sum2 += arr[row][colum];
+					}
+				}
+				//===================== 3 =================================================
+				for (let row = middleRow; row < arr.length; row++) {
+					for (let colum = 0; colum < middleColumn; colum++) {
+						sum3 += arr[row][colum];
+					}
+				}
+				//=================== 4 ===================================================
+				for (let row = middleRow; row < arr.length; row++) {
+					for (let colum = middleColumn; colum < arr[0].length; colum++) {
+						sum4 += arr[row][colum];
+					}
+				}
+				//==================== 5 ==================================================
+				for (let row = 0; row < arr.length; row++) {
+					for (let colum = 0; colum < arr[row].length; colum += 2) {
+						sum5 += arr[row][colum];
+					}
+				}
+				//===================== 6 =================================================
+				for (let row = 0; row < arr.length; row++) {
+					for (let colum = 1; colum < arr[row].length; colum += 2) {
+						sum6 += arr[row][colum];
+					}
+				}
+				//======================================================================
+				for (let row = 0; row < arr.length; row++) {
+					let startIndex;
+					if (row % 2 === 0) startIndex = 1;
+					else startIndex = 0;
+					for (let colum = startIndex; colum < arr[row].length; colum += 2) {
+						sum7 += arr[row][colum];
+					}
+					// for (let colum = 1 - (row % 2); colum < arr[row].length; colum += 2) {
+					// 	sum7 += arr[row][colum];
+					// }
+				}
+				//======================================================================
+
+				//======================================================================
+
+				document.write(`<br> Задача 1  = ${sum1}`);
+				document.write(`<br> Задача 2  = ${sum2}`);
+				document.write(`<br> Задача 3  = ${sum3}`);
+				document.write(`<br> Задача 4  = ${sum4}`);
+				document.write(`<br> Задача 5  = ${sum5}`);
+				document.write(`<br> Задача 6  = ${sum6}`);
+				document.write(`<br> Задача 7  = ${sum7}`);
+			</script>
+		</div>
+	</body>
+</html>
