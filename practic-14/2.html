@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Document</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div class="page">
+			<p>
+				Розробити функцію, у яку передають об’єкт (день, місяць, рік).
+				Визначити, який буде рік через N місяців.
+			</p>
+			<script>
+				let userDate={
+					days: 12,
+					month:4,
+					years:2023
+				}
+
+					function yearsN(userDate,N) {
+						return ((userDate.month - 1 + N) % 12) + 1
+					}
+					let N = parseInt(prompt(`Вкажіть число`))
+					let result = yearsN(userDate,N)
+					alert(`Через місяців ${N} буде місяць № ${result}`)
+			</script>
+		</div>
+	</body>
+</html>

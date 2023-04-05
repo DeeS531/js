@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Document</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div class="page">
+			<p>
+				Описати масив об’єктів – сайтів розроблених компанією з такими
+				властивостями
+			</p>
+			<ol>
+				<li>назва компанії на час розробки (назву періодично змінюють)</li>
+				<li>власник компанії</li>
+				<li>
+					споснсори (масив спонсорів)
+					<ul>
+						<li>прізвище спонсора</li>
+						<li>ім’я спонсора</li>
+						<li>сума вкладень спонсора</li>
+					</ul>
+				</li>
+				<li>рік випуску</li>
+				<li>вартість сайту</li>
+			</ol>
+			<p>Знайти:</p>
+			<ol>
+				<li>загальну вартість усіх сайтів</li>
+				<li>кількість сайтів, що було зроблено між 2000 та 2009 рр.</li>
+				<li>
+					кількість сайтів, де сума спонсорських вкладень була більшою за 100000
+				</li>
+				<li>
+					створити  загальний список усіх спонсорів (поки можуть повторюватись,
+					просто зібрати усі у масив)
+				</li>
+				<li>знайти рік, коли прибуток був найбільшим</li>
+				<li>упорядкувати список за спаданням прибутку</li>
+				<li>
+					Створити 2 окремих списки з копіями об’єктів, що містять сайти з
+					вартість до 10000 і більше 10000
+				</li>
+			</ol>
+			<script>
+				let company = [
+					{
+						nameCompany: "NBA",
+						companyOwner: "Brat Offer",
+						sponsors: {
+							firstNameSponsors: "Denys",
+							lastNameSponsors: "Koon",
+							moneySponsors: 15000,
+						},
+						yearsCompany: 1999,
+						moneySite: 7500,
+					},
+
+					{
+						nameCompany: "RTA",
+						companyOwner: "Guf Offer",
+						sponsors: {
+							firstNameSponsors: "Ivan",
+							lastNameSponsors: "Cool",
+							moneySponsors: 10000,
+						},
+						yearsCompany: 2007,
+						moneySite: 75000,
+					},
+
+					{
+						nameCompany: "AITM",
+						companyOwner: "Stiven Clop",
+						sponsors: {
+							firstNameSponsors: "Sergey",
+							lastNameSponsors: "Ivanovich",
+							moneySponsors: 100200,
+						},
+						yearsCompany: 2006,
+						moneySite: 11000,
+					},
+
+					{
+						nameCompany: "UBER",
+						companyOwner: "Gans Bans",
+						sponsors: {
+							firstNameSponsors: "Ilya",
+							lastNameSponsors: "Voon",
+							moneySponsors: 15000,
+						},
+						yearsCompany: 2012,
+						moneySite: 6500,
+					},
+				];
+
+				let sumMoneySite = company.reduce(
+					(prev, money) => prev + money.moneySite,
+					0
+				);
+				document.write(
+					`1) 3агальну вартість усіх сайтів = ${sumMoneySite}<br>`
+				);
+
+				//================================================================================================
+
+				let betweenYears_2000_2009 = 0;
+				for (const iterator of company) {
+					if (iterator.yearsCompany < 2009 && iterator.yearsCompany > 2000) {
+						betweenYears_2000_2009 += 1;
+					}
+				}
+				document.write(
+					`2) Кількість сайтів, що було зроблено між 2000 та 2009 рр. = ${betweenYears_2000_2009}<br>`
+				);
+				//===================================================================================================
+				let moneySponsorsMore_100000 = company.reduce(
+					(pev, sponsors) =>
+						sponsors.sponsors.moneySponsors > 100000 ? pev + 1 : pev,
+					0
+				);
+				document.write(
+					`3) Сума спонсорських вкладень була більшою за 100000 =  ${moneySponsorsMore_100000}<br>`
+				);
+				//===================================================================================================
+
+				let sponsorsName = [];
+				for (const iterator of company) {
+					let name = [];
+					name.push(iterator.sponsors.firstNameSponsors);
+					name.push(iterator.sponsors.lastNameSponsors);
+					sponsorsName.push(name);
+				}
+				document.write(`4) створити загальний список усіх спонсорів <br>`);
+				for (let i = 0; i < sponsorsName.length; i++) {
+					document.write(`${sponsorsName[i][0]} ${sponsorsName[i][1]}, `);
+				}
+				//===================================================================================================
+				
+				
+				for (let i = 0; i < 1; i++) {
+					let first = company[0].moneySite
+					let yearsMneySite = {};
+					for (let i = 0; i < company.length; i++) {
+						if (first < company[i].moneySite) {
+							first=company[i].moneySite
+							yearsMneySite = JSON.parse(JSON.stringify(company[i])) ;
+						}
+					}
+					
+					document.write(
+					`<br>5) знайти рік, коли прибуток був найбільшим = ${yearsMneySite.yearsCompany}<br>`
+				);
+				}
+
+				//===================================================================================================
+				let chang = company.sort((a,b)=>{
+					return b.moneySite-a.moneySite
+				}
+				)
+				console.log(company);
+				document.write('6) в консоль ')
+				//===================================================================================================
+				document.write('7) в консоль  ')
+				let copySumAfter_10000=company.filter(num => num.moneySite>10000)
+				let copySumBeffor_10000=company.filter(num => num.moneySite<10000)
+
+				console.log(copySumAfter_10000);
+				console.log(copySumBeffor_10000);
+			</script>
+		</div>
+	</body>
+</html>
