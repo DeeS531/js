@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Document</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div class="page">
+			<p>
+				Нехай x(0)=1, x(i)=x(i-1)+2(i) , де i=1,2. Визначити x(10). Розв’язати з
+				використанням рекурсивних і нерекурсивних алгоритмів
+			</p>
+			<script>
+				function factorial(params) {
+					if (params === 0) return 1;
+					else return factorial(params - 1) + 2 * params;
+				}
+				let result = factorial(10);
+				
+
+				function factorial_2(params) {
+					let res = 1;
+					for (let index = 1; index <= params; index++) {
+						res += 2*index;
+					}
+					return res;
+				}
+				let result_2 = factorial_2(10);
+
+				document.write(`  Рекурсія - ${result} <br> Альтернатива - ${result_2}`);
+			</script>
+		</div>
+	</body>
+</html>

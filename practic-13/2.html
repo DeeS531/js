@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Document</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div class="page">
+			<p>
+				Нехай x(0)=x(1)=1, x(i)=x(i-1)+2(x(i-2)) , де i=2,3. Визначити
+				x(10).Розв’язати з використанням рекурсивних і нерекурсивних алгоритмів
+			</p>
+			<script>
+				function x(i) {
+					if (i === 0 || i === 1) return 1;
+					else return x(i - 1) + 2 * x(i - 2);
+				}
+				let result = x(10);
+
+				function x2(params) {
+					let res = 1;
+					for (let i = 2; i <= params; i++) {
+						res += i - 1 + 2 * (i - 2);
+					}
+				}
+				let result_2 = x2(10);
+				document.write(`  Рекурсія - ${result} <br>
+				Альтернатива  - ${result}
+				
+				`);
+			</script>
+		</div>
+	</body>
+</html>
