@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Document</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div class="page">
+			<p>
+				Розробити клас MultChecker для перевірки таблиці множення<br /><br />
+				Поля<br />
+				Число, яке перевіряємо (наприклад, перевірка частини таблиці множення на
+				7)<br />
+				Кількість правильних відповідей<br />
+				Кількість неправильних відповідей<br /><br />
+				Методи<br />
+				Генерування прикладу (метод випадковим чином визначає друге число, перше
+				число фіксоване)<br />
+				Перевірка правильності вказаної відповіді<br />
+				render - виведення інформації про тестування на екран<br />
+				<br />
+			</p>
+			<script>
+				class MultChecker {
+					constructor() {
+						this.num = 7;
+						this.win = 0;
+						this.los = 0;
+					}
+					getRandom() {
+						return 1 + Math.floor(Math.random() * 9);
+					}
+					getUserPull() {
+						do {
+							let random = this.getRandom();
+							let numUser = parseInt(prompt(`${this.num}* ${random}=`));
+							if (this.num * random === numUser) {
+								 this.win++;
+							} else  this.los++;
+						} while (confirm("Хочете спробувати ще?"));
+					}
+				}
+
+				let result = new MultChecker();
+				result.getUserPull();
+				document.write(
+					`Правильних - ${result.win}<br>Неправильних - ${result.los}`
+				);
+			</script>
+		</div>
+	</body>
+</html>

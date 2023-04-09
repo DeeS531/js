@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Document</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div class="page">
+			<p>Створити об’єкт «Авто».</p>
+			<p>
+				Поля(властивості)<br />
+				Марка<br />
+				Розмір бака<br />
+				Кількість наявних літрів<br />
+				Кількість місць<br />
+				Кількість пасажирів <br />
+			</p>
+			<p>
+				Методи (дії)<br />
+				Заправка на вказану кількість літрів<br />
+				Виведення кількості пасажирів<br />
+				Додавання пасажирів<br />
+				Висадка пасажирів<br />
+			</p>
+			<script>
+				let auto = {
+					mark: "Opel",
+					containerAuto: 45,
+					litresContainerAuto: 22,
+					numberSeats: 5,
+					numberPassengers: 3,
+
+					fullGas: function (params) {
+						if (params + this.litresContainerAuto <= this.containerAuto) {
+						return	this.litresContainerAuto+=params
+						}
+						else return document.write(`Потрібно менше літрів вказати, доступно для заправки = ${this.containerAuto-this.litresContainerAuto}<br>`)
+					},
+
+					countPassPlus : function (params) {
+						if (params + this.numberPassengers <= this.numberSeats) {
+						return	this.numberPassengers+=params
+						}
+						else return document.write(`Нажаль лише ${this.numberSeats-this.numberPassengers} доступно місць <br> `)
+					
+					},
+
+					countPassMinus : function (params) {
+						if ( this.numberPassengers - params > 0) {
+						return	this.numberPassengers-=params
+						}
+						else return document.write(`Сьогодні зможе вийти  ${this.numberSeats} людей з авто <br> `)
+					
+					}
+
+				};
+
+				let fullGas = auto.fullGas(parseInt(prompt(`вкажіть склідьки заправити літрів ?`)))
+				let countPassMax= auto.countPassPlus(parseInt(prompt(`Скліьки пасажирів лізе в авто ? `)))
+				let countPassMin= auto.countPassMinus(parseInt(prompt(`Скліьки пасажирів лізе з  авто ?  `)))
+				document.write(`<br>Пасажирів в авто = ${auto.numberPassengers}<br>`)
+				console.log(auto);
+			</script>
+		</div>
+	</body>
+</html>

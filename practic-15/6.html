@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Document</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div class="page">
+			<p>
+				Розробити клас «Керівник танців» <br /><br />
+				Поля<br />
+				Масив імен хлопців<br />
+				Масив імен дівчат<br /><br />
+				Методи<br />
+				Метод випадкового вибору імені хлопця<br />
+				Метод випадкового вибору імені дівчини<br />
+				Метод виведення пари для танців<br />
+				Метод run , який ініціює через кожні 5 секунд виведення нової пари для
+				танців<br />
+				<br />
+				 <i>В консолі все</i>
+			</p>
+			<script>
+				class DirectorDance {
+					constructor(boy,girl){
+						this.boy=boy
+						this.girl=girl
+					}
+					
+					boyRandom(){
+						const rand = Math.floor(Math.random()*this.boy.length)
+						return this.boy[rand]
+					}
+
+					girlRandom(){
+						const rand =Math.floor(Math.random()*this.girl.length)
+						return this.girl[rand]
+					}
+					getPair(){
+						const girl = this.girlRandom()
+						const boy = this.boyRandom()
+						return `${boy} та ${girl}`
+					}
+					getRun(){
+						console.log(`Перша пара для танців: ${this.getPair()}`);
+
+						let interval = setInterval(()=> 	console.log(`${this.boyRandom()} та ${ this.girlRandom()}`)  ,5000)
+						setInterval(()=>clearInterval(interval),100000)
+					}
+				}
+
+
+
+				let usersDance = new DirectorDance(['Ivan','Oleg','Sergey','Sasha','Vasya'],['Olya','Katya','Sveta','Yana','Masha'])
+			
+				console.log(` вибору імені хлопця - ${usersDance.boyRandom()}  `);
+				console.log(`  вибору імені дівчини - ${usersDance.girlRandom()}  `);
+				console.log(` виведення пари для танців - ${usersDance.getPair()}   `);
+				
+				usersDance.getRun()
+				
+			</script>
+		</div>
+	</body>
+</html>

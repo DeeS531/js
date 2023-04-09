@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+		<title>Document</title>
+		<link rel="stylesheet" href="css/style.css" />
+	</head>
+	<body>
+		<div class="page">
+			<p>
+				Створити об’єкт «Тир». У масиві зберігаються 1, якщо у цьому квадраті є
+				заєць і 0 в іншому випадку.
+			</p>
+			<p>
+				Поля(властивості)<br />
+				Масив, у якому зберігається поле з зайцями<br />
+				Методи (дії)<br />
+				Метод пострілу (задається позиція пострілу)<br />
+				Виведення ігрового поля<br />
+			</p>
+			<script>
+				let tir = {
+					arr: [0, 1, 0, 0, 1, 0, 1, 1, 0, 1, 0, 1, 1, 1, 0, 0, 1, 0, 1],
+					getRes: function (params) {
+						if (this.arr[params] === 1) {
+							return document.write(`Тут зяйченя`)
+				} else return document.write(`Тут зяйченя нема`)}
+
+					// 	for (let i = params; i <= this.arr.length; i++) {
+					// 		if (this.arr[i] ===1) {
+					// 			return document.write(`Тут зяйченя`)
+					// 		}
+					// 		else return document.write(`Тут зяйченя нема`);
+					// 	}
+
+
+					
+				};
+				tir.getRes(4);
+			</script>
+		</div>
+	</body>
+</html>
